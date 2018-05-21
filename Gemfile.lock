@@ -28,6 +28,14 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.12)
+    bcrypt (3.1.12-x86-mingw32)
+    better_errors (2.4.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     builder (3.2.3)
     capistrano (3.4.1)
       i18n
@@ -45,6 +53,7 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    coderay (1.1.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -53,6 +62,17 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    debug_inspector (0.0.3)
+    devise (4.4.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
+    devise_cas_authenticatable (1.10.3)
+      devise (>= 1.2.0)
+      rubycas-client (>= 2.2.1)
+    erubi (1.7.1)
     erubis (2.7.0)
     execjs (2.7.0)
     hike (1.2.3)
@@ -74,6 +94,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
+    orm_adapter (0.5.0)
     pg (0.15.1)
     pg (0.15.1-x86-mingw32)
     puma (3.11.4)
@@ -98,6 +119,10 @@ GEM
     rake (12.3.1)
     rdoc (4.3.0)
     ref (2.0.0)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
+    rubycas-client (2.3.9)
+      activesupport
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -107,6 +132,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sextant (0.2.4)
+      rails (>= 3.2)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -136,24 +163,31 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (4.1.10)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.7)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
   x86-mingw32
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   capistrano (~> 3.4.0)
   capistrano-bundler
   capistrano-rails (~> 1.1)
   capistrano-rvm
   capistrano3-puma
   coffee-rails (~> 4.0.0)
+  devise
+  devise_cas_authenticatable
   jbuilder (~> 2.0)
   jquery-rails
   pg (= 0.15.1)
   rails (= 4.1.8)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  sextant
   sqlite3
   therubyracer
   turbolinks
