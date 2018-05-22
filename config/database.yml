@@ -4,6 +4,7 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
+<<<<<<< HEAD
 default: &default
   adapter: sqlite3
   pool: 5
@@ -12,10 +13,21 @@ default: &default
 development:
   <<: *default
   database: db/development.sqlite3
+=======
+#default: &default
+#  adapter: sqlite3
+#  pool: 5
+#  timeout: 5000
+
+#development:
+#  <<: *default
+#  database: db/development.sqlite3
+>>>>>>> 985931f53bb99d37c5fa75432a6d1a2b4ec05273
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+<<<<<<< HEAD
 test:
   <<: *default
   database: db/test.sqlite3
@@ -23,3 +35,35 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+=======
+#test:
+#  <<: *default
+#  database: db/test.sqlite3
+
+#production:
+#  <<: *default
+#  database: db/production.sqlite3
+
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000 
+
+staging:
+  <<: *default
+  database: socialhour_staging
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+development:
+  <<: *default
+  database: socialhour_staging
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+production:
+  <<: *default
+  database: socialhour_production
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+>>>>>>> 985931f53bb99d37c5fa75432a6d1a2b4ec05273
