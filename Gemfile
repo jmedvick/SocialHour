@@ -1,18 +1,19 @@
 source 'https://rubygems.org'
 
-gem 'nokogiri', '~> 1.6.8'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.3.8'
+
 gem 'rails', '4.1.8'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
+
+# Lock minitest to a version compatible with Ruby 2.3
+gem 'minitest', '~> 5.11.3'
+gem 'mini_mime', '< 1.1.0'
+
+# Your other gems (example)
+gem 'sqlite3', '~> 1.3.6'    # compatible with older Ruby
+gem 'sass-rails', '~> 4.0.3' # lock to compatible version
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer',  platforms: :ruby
+gem 'coffee-rails', '~> 4.1.0'
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -23,36 +24,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'devise'
-gem 'devise_cas_authenticatable'
-gem 'sextant'
-gem 'better_errors'
-gem 'binding_of_caller'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Add other gems your app uses here,
+# but make sure to lock any newer versions that require Ruby >= 2.7
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
-
-group :staging do
-    gem 'capistrano', '~> 3.4.0',         require: false
-    gem 'capistrano-rvm',     require: false
-    gem 'capistrano-rails', '~> 1.1',  require: false
-    gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
-    gem 'rspec-rails',      ">= 2.0.0.beta"
-    gem 'capybara'
-end
-
-group :production do
-    gem 'pg', '0.15.1'
-end
+# Bundle edge Rails if you want
+# gem 'rails', github: 'rails/rails'
